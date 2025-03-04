@@ -16,10 +16,11 @@ if ( ! function_exists( 'config' ) ) {
 	/**
 	 * Get a configuration value from the Configuration Repository.
 	 *
-	 * @param string|null $key Key to retrieve.
-	 * @param mixed       $default Default configuration value.
+	 * @param string $key Key to retrieve.
+	 * @param mixed  $default Default configuration value.
+	 * @return mixed
 	 */
-	function config( ?string $key = null, mixed $default = null ): mixed {
+	function config( string $key = null, $default = null ) {
 		if ( is_null( $key ) ) {
 			return app( 'config' );
 		}
