@@ -3,17 +3,9 @@
     "description": "The Mantle Framework Config Package",
     "type": "library",
     "require": {
-        "php": "^8.2",
-        "alleyinteractive/composer-wordpress-autoloader": "^1.0",
+        "php": "^8.3",
         "mantle-framework/contracts": "^1.0",
         "mantle-framework/support": "^1.0"
-    },
-    "extra": {
-        "wordpress-autoloader": {
-            "autoload": {
-                "Mantle\\Config": "./"
-            }
-        }
     },
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -23,12 +15,18 @@
         }
     ],
     "autoload": {
+        "psr-4": {
+            "Mantle\\Config\\": "./"
+        },
         "files": [
             "autoload.php"
         ]
     },
     "minimum-stability": "dev",
     "config": {
+        "allow-plugins": {
+            "alleyinteractive/composer-wordpress-autoloader": true
+        },
         "sort-packages": true
     }
 }
